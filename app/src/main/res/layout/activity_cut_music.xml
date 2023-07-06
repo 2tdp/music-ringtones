@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_bg_edit_music">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ctlTitle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent=".13"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivTick"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:src="@drawable/ic_tick"
+            app:layout_constraintBottom_toBottomOf="@id/ivBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivBack" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/lineToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray_main"
+        app:layout_constraintTop_toBottomOf="@id/ctlTitle" />
+
+    <TextView
+        android:id="@+id/tvNameSong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_55sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:fontFamily="@font/nunito_semi_bold"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lineToolbar" />
+
+    <TextView
+        android:id="@+id/tvDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_regular"
+        android:textColor="@color/gray_main2"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="@id/tvNameSong"
+        app:layout_constraintStart_toStartOf="@id/tvNameSong"
+        app:layout_constraintTop_toBottomOf="@id/tvNameSong" />
+
+    <ImageView
+        android:id="@+id/ivControlMusic"
+        android:layout_width="@dimen/_84sdp"
+        android:layout_height="@dimen/_84sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:src="@drawable/ic_play_music"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDuration" />
+
+    <com.remi.ringtones.audiocutter.ringtonemaker.freeringtone.viewcustom.RangeSeekbar
+        android:id="@+id/rangeSeekbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivControlMusic" />
+
+    <TextView
+        android:id="@+id/tvStart"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:fontFamily="@font/nunito_regular"
+        android:gravity="center"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text="@string/time_cut"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toStartOf="@id/ivLine"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rangeSeekbar" />
+
+    <ImageView
+        android:id="@+id/ivLine"
+        android:layout_width="@dimen/_8sdp"
+        android:layout_height="@dimen/_2sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:src="@drawable/ic_line_hozital"
+        app:layout_constraintBottom_toBottomOf="@+id/tvStart"
+        app:layout_constraintEnd_toStartOf="@+id/tvEnd"
+        app:layout_constraintStart_toEndOf="@+id/tvStart"
+        app:layout_constraintTop_toTopOf="@+id/tvStart" />
+
+    <TextView
+        android:id="@+id/tvEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_25sdp"
+        android:fontFamily="@font/nunito_regular"
+        android:gravity="center"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text="@string/time_cut"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivLine"
+        app:layout_constraintTop_toTopOf="@id/tvStart" />
+
+    <com.remi.ringtones.audiocutter.ringtonemaker.freeringtone.viewcustom.ringdroid.WaveformView
+        android:id="@+id/waveForm"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_84sdp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/ivControlMusic" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
