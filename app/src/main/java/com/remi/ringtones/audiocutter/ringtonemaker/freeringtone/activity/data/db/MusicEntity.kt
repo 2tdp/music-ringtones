@@ -8,19 +8,19 @@ import com.remi.ringtones.audiocutter.ringtonemaker.freeringtone.helpers.MUSIC_D
 @Entity(tableName = MUSIC_DB)
 data class MusicEntity(
     @PrimaryKey(autoGenerate = true)
-    val id: Long = 0L,
+    var id: Long = 0L,
     @ColumnInfo(name = "name")
-    val songName: String="",
+    var songName: String = "",
     @ColumnInfo(name = "favorite")
     var isFavorite: Boolean = false,
     @ColumnInfo(name = "duration")
-    val duration: Long = 0L,
+    var duration: Long = 0L,
     @ColumnInfo(name = "path")
-    val path: String = "",
+    var path: String = "",
     @ColumnInfo(name = "album")
-    val album: String = "",
+    var album: String = "",
     @ColumnInfo(name = "uri")
-    val uri: String = "",
+    var uri: String = "",
     @ColumnInfo(name = "play")
     var isPlay: Boolean = false
-){}
+)

@@ -136,8 +136,13 @@ class WaveformView(context: Context, attrs: AttributeSet) : View(context, attrs)
 //            setShadowLayer(2f, 1f, 1f, ContextCompat.getColor(getContext(), R.color.white))
 //        }
         mGestureDetector = GestureDetector(context, object : SimpleOnGestureListener() {
-            override fun onFling(e1: MotionEvent, e2: MotionEvent, vx: Float, vy: Float): Boolean {
-                mListener!!.waveformFling(vx)
+            override fun onFling(
+                e1: MotionEvent?,
+                e2: MotionEvent,
+                velocityX: Float,
+                velocityY: Float
+            ): Boolean {
+                mListener!!.waveformFling(velocityX)
                 return true
             }
         })

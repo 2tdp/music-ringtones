@@ -258,8 +258,9 @@ object Utils {
                 val output: OutputStream?
                 try {
                     newUri = contentResolver.insert(contentUri, values)
-                    output = contentResolver.openOutputStream(newUri!!)
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, output)
+                    contentResolver.openOutputStream(newUri!!)?.let {
+                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, it)
+                    }
                 } catch (e: IOException) {
                     contentResolver.delete(newUri!!, null, null)
                 }
@@ -277,8 +278,9 @@ object Utils {
                     val uri = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
                     val output: OutputStream?
                     try {
-                        output = contentResolver.openOutputStream(uri!!)
-                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, output)
+                        contentResolver.openOutputStream(uri!!)?.let {
+                            bitmap.compress(Bitmap.CompressFormat.PNG, 100, it)
+                        }
                     } catch (e: IOException) {
                         if (uri != null) contentResolver.delete(uri, null, null)
                     }

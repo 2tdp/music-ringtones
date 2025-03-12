@@ -12,8 +12,8 @@ interface MusicDAO {
     @Query("UPDATE music SET id = :newID WHERE id = :id")
     fun update(id: Long, newID: Long)
 
-    @Delete
-    suspend fun delete(music: MusicEntity)
+//    @Delete
+//    suspend fun delete(music: MusicEntity)
 
     @Query("SELECT * from music")
     fun getAllMusic(): Flow<MutableList<MusicEntity>>
